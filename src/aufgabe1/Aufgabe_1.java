@@ -5,20 +5,18 @@ import java.util.Scanner;
 public class Aufgabe_1 {
 
     public static void main(String[] args) {
-        String name;
-        int age;
-        double height;
+
         Scanner scan = new Scanner(System.in);
 
-
+        // getting Input
         System.out.println("Bitte geben Sie Ihren Namen ein.");
-        name = scan.nextLine();
+        String name = scan.nextLine();
         System.out.println("Bitte geben Sie Ihr Alter ein.");
-        age = scan.nextInt();
+        int age = scan.nextInt();
         System.out.println("Bitte geben Sie Ihre Größe in Metern ein.");
-        height = scan.nextDouble();
+        double height = scan.nextDouble();
 
-        //Output
+        // Output
         System.out.println("Hallo " + name + "!\nSie sind " + age + " Jahre alt und " + height + "m groß.");
     }
 
