@@ -9,6 +9,8 @@ public class Aufgabe_1 {
         int age;
         double height;
         Scanner scan = new Scanner(System.in);
+
+
         System.out.println("Bitte geben Sie Ihren Namen ein.");
         name = scan.nextLine();
         System.out.println("Bitte geben Sie Ihr Alter ein.");
@@ -16,7 +18,8 @@ public class Aufgabe_1 {
         System.out.println("Bitte geben Sie Ihre Größe in Metern ein.");
         height = scan.nextDouble();
 
-        System.out.println("Hallo " + name + "!\tSie sind " + age + " Jahre alt und " + height + "m groß.");
+        //Output
+        System.out.println("Hallo " + name + "!\nSie sind " + age + " Jahre alt und " + height + "m groß.");
     }
 
 }
