@@ -1,4 +1,4 @@
-package aufgabe1;
+package vorlesung.aufgabe1;
 
 import java.util.Scanner;
 
@@ -10,6 +10,7 @@ public class Aufgabe_1 {
         int age;
         double height;
         Scanner scan = new Scanner(System.in);
+
 
         // getting Input
         System.out.print("Bitte geben Sie Ihren Namen ein:");

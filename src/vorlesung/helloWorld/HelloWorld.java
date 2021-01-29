@@ -1,4 +1,4 @@
-package helloWorld;
+package vorlesung.helloWorld;
 
 public class HelloWorld {
 
