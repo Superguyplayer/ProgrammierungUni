@@ -6,11 +6,12 @@ public class Aufgabe_4a {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Bitte geben Sie Ihr Gehalt ein: ");
-        double gehalt = scanner.nextDouble();
-        double steuer;
+        double steuer, gehalt = scanner.nextDouble();
+
 
         if(gehalt <= 12000) {
             steuer = gehalt * 0.12;
+
         }else if(gehalt <= 20000){
             steuer = gehalt * 0.15;
 
