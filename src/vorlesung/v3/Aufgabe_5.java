@@ -19,7 +19,8 @@ public class Aufgabe_5 {
 
 
         for (int i = 1; i <= laufzeit; i++) {
-            kapital = kapital * (zinsSatz / 100 + 1);
+            kapital = Math.round(kapital * (zinsSatz / 100 + 1) * 100);
+            kapital = kapital / 100;
             System.out.println("Ihr Kapital im Jahr " + i + " beträgt " + kapital + "€");
 
         }
