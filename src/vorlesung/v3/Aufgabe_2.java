@@ -13,8 +13,14 @@ public class Aufgabe_2 {
 
         System.out.print("Bitte gib deine geratene Zahl zwischen 1 und 5 ein: ");
 
-        if(scan.nextInt() == randomNumber) {
+        int input = scan.nextInt();
+
+        if(input == randomNumber) {
             System.out.println("Super! Das war richtig!");
+        }else if(input < randomNumber) {
+            System.out.println("Die zu erratene Zahl ist größer");
+        }else {
+            System.out.println("Die zu erratene Zahl ist kleiner");
         }
 
         System.out.println("Das Programm wird nun beendet. Bitte starte es neu, um erneut zu raten.");
