@@ -1,4 +1,4 @@
-package vorlesung.aufgabe1;
+package vorlesung.v2;
 
 import java.util.Scanner;
 
