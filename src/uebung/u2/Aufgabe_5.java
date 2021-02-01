@@ -1,4 +1,4 @@
-package uebung.zwei;
+package uebung.u2;
 
 import java.util.Scanner;
 
