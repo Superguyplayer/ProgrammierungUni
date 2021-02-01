@@ -1,6 +1,5 @@
 package vorlesung.v3;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Aufgabe_4b {
