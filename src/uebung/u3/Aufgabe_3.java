@@ -18,7 +18,7 @@ public class Aufgabe_3 {
 
             }
 
-            System.out.println("\nWenn sie von vorne beginnen möchten bestätigen sie mit y, ansonsten geben Sie n ein.");
+            System.out.println("\nWenn Sie von vorne beginnen möchten bestätigen sie mit y, ansonsten geben Sie n ein.");
             if(!s.next().equals("y")) {
                 online = false;
             }

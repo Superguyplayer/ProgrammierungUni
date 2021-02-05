@@ -10,13 +10,13 @@ public class Aufgabe_5 {
 
         int height = scanner.nextInt();
 
-        for ( int i = 1; i <= height; i++) {
+        for ( int i = 1; i <= height; i++) { // Height
 
-            for (int k = height - i; k > 0; k--) {
+            for (int k = height - i; k > 0; k--) { // Spaces
                 System.out.print(" ");
             }
 
-            for (int j = 1; j <= (i * 2) - 1; j++) {
+            for (int j = 1; j <= (i * 2) - 1; j++) { //Stars
 
                 System.out.print("*");
             }

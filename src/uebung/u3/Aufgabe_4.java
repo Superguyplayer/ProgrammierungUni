@@ -5,6 +5,7 @@ public class Aufgabe_4 {
 
         for (int i = 1; i <= 100; i++) {
             System.out.print(i);
+
             if(i % 3 == 0) {
                 System.out.println(" ist durch 3 teilbar");
             }else {
