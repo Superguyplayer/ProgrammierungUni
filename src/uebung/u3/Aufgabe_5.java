@@ -10,7 +10,7 @@ public class Aufgabe_5 {
 
         int height = scanner.nextInt();
 
-        for ( int i = 1; i <= height; i++) { // Height
+        for (int i = 1; i <= height; i++) { // Height
 
             for (int k = height - i; k > 0; k--) { // Spaces
                 System.out.print(" ");

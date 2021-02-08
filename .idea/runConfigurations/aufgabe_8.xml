@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Übung_3_Aufgabe_3" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="uebung.u3.Aufgabe_3" />
+  <configuration default="false" name="aufgabe_8" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="vorlesung.v4.Aufgabe_8.Aufgabe_8" />
     <module name="ProgrammmierungUni" />
     <method v="2">
       <option name="Make" enabled="true" />
