@@ -1,5 +1,6 @@
 package vorlesung.v4;
 
+import java.awt.*;
 import java.util.Scanner;
 
 public class Aufgabe_7 {
@@ -15,8 +16,10 @@ public class Aufgabe_7 {
         } else {
             System.out.println(rekursiveSum(input));
         }
-
     }
+
+
+
 
     private static int iterativeSum(int n) {
 

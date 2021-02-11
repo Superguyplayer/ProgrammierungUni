@@ -1,4 +1,4 @@
-package vorlesung.v4.Aufgabe_8;
+package vorlesung.v4;
 
 import java.awt.*;
 import java.util.Scanner;
@@ -29,7 +29,7 @@ public class Aufgabe_8 {
 
             System.out.print("Movement in X or Y:");
 
-            if (s.next().toLowerCase().equals("x")) { // which direction
+            if (s.next().equalsIgnoreCase("x")) { // which direction
                 System.out.println("How many: ");
                 int x = s.nextInt(); // how many steps
                 if ((player.x + x) <= 10) {          //check the bounds
