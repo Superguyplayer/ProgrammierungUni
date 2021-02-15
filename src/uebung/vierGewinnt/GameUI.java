@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serial;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,6 +16,7 @@ import javax.swing.SwingConstants;
 
 public class GameUI extends JFrame 
 {
+	@Serial
 	private static final long serialVersionUID = 1L;
 
 	private Game g;
@@ -42,6 +44,7 @@ public class GameUI extends JFrame
 					g.setCoin(p);
 					t.updatePanel();
 					t.check4Winner();
+
 				}
 				
 			});
@@ -77,6 +80,7 @@ public class GameUI extends JFrame
 			add(p,BorderLayout.CENTER);
 			validate();
 		}
+
 			
 	}
 	
