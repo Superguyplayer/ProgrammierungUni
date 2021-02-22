@@ -34,7 +34,7 @@ public class Aufgabe_9 {
 
     }
 
-    private static float average(int[] numbers) {
+    private static float average(int... numbers) {
 
         int sum = 0;
         for (int i:numbers) {
