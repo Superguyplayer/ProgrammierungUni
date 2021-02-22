@@ -18,19 +18,29 @@ public class Aufgabe_9 {
             numbers[i] = scan.nextInt();
         }
 
-        int sum = 0;
+
         System.out.println("Dein Array: "); // Array ausgeben
+
         for (int i = 0; i < numbers.length - 1; i++) {
             System.out.print(numbers[i] + ", ");
-            sum += numbers[i];
 
         }
-        System.out.print(numbers[numbers.length - 1]);
+        System.out.print(numbers[numbers.length - 1]); // letzte Zahl ausgeben
+
         System.out.println();
-        System.out.println("Summe: " + sum);
 
-        float mittel = sum / (float) numbers.length;
-        System.out.println("Mittelwert: " + (mittel));
+        System.out.println("Mittelwert: " + average(numbers));
 
+
+    }
+
+    private static float average(int[] numbers) {
+
+        int sum = 0;
+        for (int i:numbers) {
+            sum += i;
+        }
+
+        return sum / (float) numbers.length;
     }
 }

@@ -53,8 +53,8 @@ public class GameUI extends JFrame
 		}
 		this.add(buttonpanel, BorderLayout.NORTH);
 		
-		this.setSize(250,250);
-		this.setLocation(300,300);
+		this.setSize(500,500);
+		this.setLocation(500,300);
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		

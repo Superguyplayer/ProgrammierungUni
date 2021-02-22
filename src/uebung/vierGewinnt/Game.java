@@ -57,45 +57,56 @@ public class Game {
      */
     public int isWinner() {
         boolean won = false;
+
+        //Zähler für die Richtungen
         int countX = 0;
         int countY = 0;
         int countDiaObenRechts = 0;
         int countDiaUntenRechts = 0;
 
-        for (int x = 0; x < sizeX; x++) {
-            for (int y = 0; y < sizeY; y++) {
+        //für jedes Feld zählen
+        for (int y = 0; y < sizeY; y++) {
+            for (int x = 0; x < sizeX; x++) {
 
+                //waagerecht
                 countX = countCells(x - 1, y, -1, 0, currentPlayer) + countCells(x + 1, y, 1, 0, currentPlayer);
+                //Senkrecht
                 countY = countCells(x, y - 1, 0, -1, currentPlayer) + countCells(x, y + 1, 0, 1, currentPlayer);
 
+                //diagonal von links unten nach rechts oben
                 countDiaObenRechts = countCells(x - 1, y - 1, -1, -1, currentPlayer) + countCells(x + 1, y + 1, 1, 1, currentPlayer);
+                //diagonal von linksOben nach rechts unten
                 countDiaUntenRechts = countCells(x - 1, y + 1, -1, 1, currentPlayer) + countCells(x + 1, y - 1, 1, -1, currentPlayer);
 
-                if (countX >= 4 || countY >= 4 || countDiaObenRechts >= 4 || countDiaUntenRechts >= 4) {
-                    int player = currentPlayer;
+
+                if (countX >= 4 || countY >= 4 || countDiaObenRechts >= 4 || countDiaUntenRechts >= 4) { // eine der Möglichkeiten zum gewinnen
+                    int player = currentPlayer; // erst Spieler abspeichern, dann Tauschen
+
                     switch (currentPlayer) {
                         case 1 -> currentPlayer = 2;
                         case 2 -> currentPlayer = 1;
                     }
-                    return player;
+                    return player; // gewinner zurückgeben
                 }
 
             }
         }
 
-        switch (currentPlayer) {
+        switch (currentPlayer) { // spieler Tauschen, wenn niemand gewonnen hat...
             case 1 -> currentPlayer = 2;
             case 2 -> currentPlayer = 1;
         }
-        return 0;
+        return 0; // keiner hat gewonnen
 
     }
 
+    //rekursive Überprüfung auf nebeneinanderliegende Zellen
     private int countCells(int x, int y, int xDir, int yDir, int player) {
-        //innerhalb der Grenzen
-        if (x >= 0 && x < sizeX && y >= 0 && y < sizeY) {
 
-            // wenn gleiche Farbe wie Spieler, dann eins addieren und in gleiche Richtung weiter
+        //innerhalb der Grenzen
+        if ((x >= 0 && x < sizeX) && (y >= 0 && y < sizeY)) {
+
+            // wenn gleicher Spieler, dann eins addieren und in gleiche Richtung weiter
             if (feld[x][y] == player) {
                 return countCells(x + xDir, y + yDir, xDir, yDir, player) + 1;
 
