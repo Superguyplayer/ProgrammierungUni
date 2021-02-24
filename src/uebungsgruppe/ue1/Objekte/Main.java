@@ -1,6 +1,6 @@
-import java.util.Arrays;
+package uebungsgruppe.ue1.Objekte;
 
-public class Sandbox {
+public class Main {
     public static void main(String[] args) {
 
     }
