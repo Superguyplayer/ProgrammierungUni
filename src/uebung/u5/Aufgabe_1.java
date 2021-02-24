@@ -9,14 +9,14 @@ public class Aufgabe_1 {
        int[] arr2 = threeNumbers();
 
        int skalar = 0;
-        for (int i = 0; i < arr1.length; i++) {
+        for (int i = 0; i < arr1.length; i++) { // skalar aurechnen
             skalar += arr1[i] * arr2[i];
         }
         System.out.println(skalar);
 
     }
 
-    private static int[] threeNumbers() {
+    private static int[] threeNumbers() { // Zahlen einlesen
         int[] arr = new int[3];
         Scanner s = new Scanner(System.in);
         for (int i = 0; i < 3; i++) {
