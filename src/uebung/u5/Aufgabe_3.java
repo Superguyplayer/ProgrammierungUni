@@ -19,9 +19,9 @@ public class Aufgabe_3 {
 
         StringBuilder turned = new StringBuilder();
 
-        for (int i = word.length() - 1; i >= 0; i--) {
-            turned.append(word.charAt(i)); // Wort umgekehrt zusammensetzen
-        }
+        turned.append(word);
+        turned.reverse();
+
 
         return turned.toString().equalsIgnoreCase(word); // boolean zurückgeben, ob wörter identisch
     }
