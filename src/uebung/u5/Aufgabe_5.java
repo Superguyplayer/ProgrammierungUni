@@ -28,6 +28,10 @@ public class Aufgabe_5 {
 
     private static char shiftChar(char abc, int offset) {
 
+        if(abc == ' ') {
+            return ' ';
+        }
+
         if(alphabet.indexOf(abc) + offset > 25) {// nach oben
             return alphabet.charAt(alphabet.indexOf(abc) + offset - 26);
 
