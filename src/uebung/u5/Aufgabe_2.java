@@ -22,9 +22,7 @@ public class Aufgabe_2 {
         Random rand = new Random();
 
         for (int i = 0; i < 3; i++) {
-            int row = rand.nextInt(10);
-            int coloumn = rand.nextInt(10);
-            field[coloumn][row] = 1;
+            field[rand.nextInt(10)][rand.nextInt(10)] = 1;
 
         }
         return field;
