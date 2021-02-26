@@ -4,15 +4,12 @@ public class Node {
     private String content;
     private Node leftTree;
     private Node rightTree;
+    private int key;
 
-    public Node(String content) {
+    public Node(String content, int key) {
         this.content = content;
+        this.key = key;
     }
-
-    public Node addRecursive(Node current, String content) {
-        return current;
-    }
-
 
 
     public void setLeftTree(Node leftTree) {
@@ -27,9 +24,6 @@ public class Node {
         return content;
     }
 
-    public void setContent(String content) {
-        this.content = content;
-    }
 
     public Node getLeftTree() {
         return leftTree;
@@ -37,5 +31,9 @@ public class Node {
 
     public Node getRightTree() {
         return rightTree;
+    }
+
+    public int getKey() {
+        return key;
     }
 }
