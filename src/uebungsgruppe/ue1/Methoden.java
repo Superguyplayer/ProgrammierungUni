@@ -1,12 +1,15 @@
 package uebungsgruppe.ue1;
 
 public class Methoden {
+
+
     public static void main(String[] args) {
 
+        mitParametern("hai", timesTwo(2));
+
+
     }
-
-
-    private static void ohneRueckgabe() {
+    public static void ohneRueckgabe() {
         System.out.println("hi");
         System.out.println("bla");
     }

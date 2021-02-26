@@ -12,12 +12,6 @@ public class Aufgabe_2 {
     private static int[][] createField() {
         int[][] field = new int[10][10];
 
-        for (int[] row :field) { // array mit nullen auffüllen
-            for(int coloumn:row) {
-                coloumn = 0;
-            }
-        }
-
         Random rand = new Random();
 
         for (int i = 0; i < 3; i++) { // drei zufällige einsen setzen

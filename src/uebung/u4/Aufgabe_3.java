@@ -12,7 +12,7 @@ public class Aufgabe_3 {
     static final String TEXT_YELLOW = "\u001B[33m";
     static final String TEXT_BLUE = "\u001B[34m";
 
-    static final int MOVES = 20;
+    static final int MOVES = 25;
 
 
     public static void main(String[] args) {
@@ -39,6 +39,7 @@ public class Aufgabe_3 {
 
         System.out.println("Movement: up(u), down(d), right(r), left(l)\nYou've got " + MOVES + " Moves");
         visualize(player, opponent, coin, door); // showing first Time
+
 
         for (int i = 0; i < MOVES; i++) {
 

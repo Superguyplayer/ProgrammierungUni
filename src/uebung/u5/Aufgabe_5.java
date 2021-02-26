@@ -32,12 +32,12 @@ public class Aufgabe_5 {
             return ' ';
         }
 
-        if(alphabet.indexOf(abc) + offset > 25) {// nach oben
-            return alphabet.charAt(alphabet.indexOf(abc) + offset - 26);
+        if(alphabet.indexOf(abc) + offset > alphabet.length() - 1) {// nach oben
+            return alphabet.charAt(alphabet.indexOf(abc) + offset - alphabet.length());
 
         }else if(alphabet.indexOf(abc) + offset < 0) {// nach unten
 
-            return alphabet.charAt(alphabet.indexOf(abc) + offset + 26);
+            return alphabet.charAt(alphabet.indexOf(abc) + offset + alphabet.length());
 
         }else{ // normal
             return alphabet.charAt(alphabet.indexOf(abc) + offset);

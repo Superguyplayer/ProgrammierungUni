@@ -6,6 +6,7 @@ public class Aufgabe_3 {
     public static void main(String[] args) {
         boolean online = true;
         Scanner s = new Scanner(System.in);
+
         while (online) {
 
             System.out.print("Geben Sie Ihre Zahl ein: ");
