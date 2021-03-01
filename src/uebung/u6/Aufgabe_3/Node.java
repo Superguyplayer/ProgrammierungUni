@@ -24,6 +24,9 @@ public class Node {
         return content;
     }
 
+    public void setContent(String content) {
+        this.content = content;
+    }
 
     public Node getLeftTree() {
         return leftTree;
@@ -36,4 +39,9 @@ public class Node {
     public int getKey() {
         return key;
     }
+
+    public Boolean isLeaf() {
+        return leftTree == null && rightTree == null;
+    }
+
 }
