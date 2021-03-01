@@ -12,6 +12,7 @@ public class Aufgabe_4 {
 
     private static int[] bubbleSort(int... arrayToSort) {
         int j; // Hilsvariable
+
         for (int k : arrayToSort) {
             for (int i = 0; i < arrayToSort.length - 1; i++) {
 

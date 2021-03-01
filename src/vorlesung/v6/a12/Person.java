@@ -4,6 +4,30 @@ public class Person {
     private String firstname, lastname, email;
     private int age;
 
+
+    public Person(String firstname, String lastname, String email, int age) {
+        setFirstname(firstname);
+        setLastname(lastname);
+        setAge(age);
+        setEmail(email);
+
+
+    }
+
+    public Person(String firstname, String lastname) {
+        setFirstname(firstname);
+        setLastname(lastname);
+
+    }
+
+    public Person(Person p){
+
+        this(p.firstname, p.lastname);
+
+    }
+
+
+
     public int getAge() {
         return age;
     }
@@ -52,10 +76,18 @@ public class Person {
 
 
     public String getStatus() {
-        if (this.email != null) {
-            return this.firstname + " " + this.lastname + ", " + this.age + ", hat die Email-Adresse: " + this.email;
-        } else {
-            return this.firstname + " " + this.lastname + ", " + this.age + ", hat keine Email-Adresse.";
+        if(this.age != 0) {
+            if (this.email != null) {
+                return this.firstname + " " + this.lastname + ", " + this.age + ", hat die Email-Adresse: " + this.email;
+            } else {
+                return this.firstname + " " + this.lastname + ", " + this.age + ", hat keine Email-Adresse.";
+            }
+        }else{
+            if (this.email != null) {
+                return this.firstname + " " + this.lastname +", hat die Email-Adresse: " + this.email;
+            } else {
+                return this.firstname + " " + this.lastname + ", hat keine Email-Adresse.";
+            }
         }
     }
 }
