@@ -4,10 +4,10 @@ public class Main {
     public static void main(String[] args) {
         Person stolte = new Person();
 
-        stolte.setFirstname("Per Henrik");
-        stolte.setLastname("Stolte");
-        stolte.setAge(19);
-        stolte.setEmail("perhenrik.phs@gmail.com");
+
+        stolte.setFirstname("Per Henrik").setLastname("Stolte").setAge(19).setEmail("perhenrik.stolte@studium.hspv.nrw.de");
+
+
         System.out.println(stolte.getStatus());
 
     }
