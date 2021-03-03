@@ -10,7 +10,6 @@ public class Main {
         bTree.addRecursive("a");
         bTree.addRecursive("8");
         bTree.addRecursive("c");
-        bTree.addRecursive("b");
         bTree.addRecursive("6");
         bTree.addRecursive("d");
 
@@ -18,7 +17,7 @@ public class Main {
 
         bTree.printTree();
 
-        bTree.delete("a");
+        bTree.delete("c");
         System.out.println();
 
         bTree.printTree();

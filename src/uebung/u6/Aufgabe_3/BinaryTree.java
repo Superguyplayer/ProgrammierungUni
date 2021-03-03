@@ -116,15 +116,15 @@ public class BinaryTree {
         Node toDelete = getNode(cn);
         Node parent = findParent(toDelete);
 
-        if (toDelete == null) { // then it is the root...i dont know why...
+        if (toDelete == getRoot()) { // then it is the root...i dont know why...
             Node successor = findNextNodeInOrder(getRoot());
 
             getRoot().setContent(successor.getContent()); // replace content of root with content of next node in line
 
             if (findParent(successor).getRightTree() == successor) { // delete the Node we took the content of
-                findParent(successor).setRightTree(null);
+                findParent(successor).setRightTree(successor.getRightTree());
             } else {
-                findParent(successor).setLeftTree(null);
+                findParent(successor).setLeftTree(successor.getLeftTree());
             }
             return getRoot(); // returning the root we put the new content in
 
@@ -179,9 +179,9 @@ public class BinaryTree {
 
         //delete succesor
         if (findParent(successor).getRightTree() == successor) {
-            findParent(successor).setRightTree(null);
+            findParent(successor).setRightTree(successor.getLeftTree());
         } else {
-            findParent(successor).setLeftTree(null);
+            findParent(successor).setLeftTree(successor.getRightTree());
         }
         return toDelete;
 
