@@ -1,66 +1,15 @@
 package uebung.u6.Aufgabe_3;
 
+
 public class BinaryTree {
     private Node root;
+
 
 
     public Node getRoot() {
         return this.root;
     }
 
-
-    public boolean contains(String content) {
-        return contains(content, this.root);
-    }
-
-    public boolean contains(String content, Node node) {
-
-        if (node == null) {
-            return false;
-        }
-
-        if (contains(content, node.getLeftTree())) {
-            return true;
-        } else {
-            if (node.getContent().equals(content)) {
-                return true;
-            }
-            return contains(content, node.getRightTree());
-        }
-
-
-    }
-
-
-    public Node addRecursive(String cn, int key) {
-        if (getRoot() == null) {
-            root = new Node("root: " + cn, key);
-            return root;
-        }
-        return addRecursive(getRoot(), cn, key);
-    }
-
-    public Node addRecursive(Node current, String cn, int key) {
-
-
-        if (current.getKey() > key) {
-            if (current.getLeftTree() == null) {
-                current.setLeftTree(new Node(cn, key));
-                return current.getLeftTree();
-            }
-            return addRecursive(current.getLeftTree(), cn, key);
-        }
-        if (current.getKey() < key) {
-            if (current.getRightTree() == null) {
-                current.setRightTree(new Node(cn, key));
-                return current.getRightTree();
-            }
-            return addRecursive(current.getRightTree(), cn, key);
-        }
-
-        return current;
-
-    }
 
     public Node getNode(String cn) {
         return getNode(cn, getRoot());
@@ -84,6 +33,61 @@ public class BinaryTree {
         return null;
 
     }
+
+    public boolean contains(String content) { // nach Inhalt suchen
+        return contains(content, this.root);
+    }
+
+    public boolean contains(String content, Node node) {
+
+        if (node == null) {
+            return false;
+        }
+
+        if (contains(content, node.getLeftTree())) {
+            return true;
+        } else {
+            if (node.getContent().equals(content)) {
+                return true;
+            }
+            return contains(content, node.getRightTree());
+        }
+
+
+    }
+
+    public Node addRecursive(String cn) {
+        if (getRoot() == null) {
+            root = new Node(cn);
+            return root;
+        }
+
+        return addRecursive(getRoot(), cn);
+
+    }
+
+
+    public Node addRecursive(Node current, String cn) {
+
+
+        if (current.getContent().toLowerCase().compareTo(cn.toLowerCase()) > 0) {
+            if (current.getLeftTree() == null) {
+                current.setLeftTree(new Node(cn));
+                return current.getLeftTree();
+            }
+            return addRecursive(current.getLeftTree(), cn);
+        }
+        if (current.getContent().toLowerCase().compareTo(cn.toLowerCase()) < 0) {
+            if (current.getRightTree() == null) {
+                current.setRightTree(new Node(cn));
+                return current.getRightTree();
+            }
+            return addRecursive(current.getRightTree(), cn);
+        }
+
+        return current;
+    }
+
 
     public Node findParent(Node nodeToFind) {
         if (nodeToFind == getRoot()) {
@@ -198,12 +202,20 @@ public class BinaryTree {
         return null;
     }
 
+    public void printTree() {
+        printTree(getRoot());
+    }
+
     public void printTree(Node node) {
         if (node == null) {
             return;
         }
         printTree(node.getLeftTree());
-        System.out.println(node.getContent() + ", key: " + node.getKey());
+        if(getRoot() == node){
+            System.out.print("root: ");
+        }
+        System.out.println(node.getContent());
+
         printTree(node.getRightTree());
     }
 

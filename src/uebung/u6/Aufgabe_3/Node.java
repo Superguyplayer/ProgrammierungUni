@@ -4,20 +4,24 @@ public class Node {
     private String content;
     private Node leftTree;
     private Node rightTree;
-    private int key;
+    public static int count = 0;
 
-    public Node(String content, int key) {
+
+    public Node(String content) {
         this.content = content;
-        this.key = key;
+        count++;
+
     }
 
 
-    public void setLeftTree(Node leftTree) {
+    public Node setLeftTree(Node leftTree) {
         this.leftTree = leftTree;
+        return this;
     }
 
-    public void setRightTree(Node rightTree) {
+    public Node setRightTree(Node rightTree) {
         this.rightTree = rightTree;
+        return this;
     }
 
     public String getContent() {
@@ -36,9 +40,6 @@ public class Node {
         return rightTree;
     }
 
-    public int getKey() {
-        return key;
-    }
 
     public Boolean isLeaf() {
         return leftTree == null && rightTree == null;
