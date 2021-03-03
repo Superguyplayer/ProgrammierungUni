@@ -4,12 +4,9 @@ package uebung.u6.Aufgabe_3;
 public class BinaryTree {
     private Node root;
 
-
-
     public Node getRoot() {
         return this.root;
     }
-
 
     public Node getNode(String cn) {
         return getNode(cn, getRoot());
@@ -17,47 +14,36 @@ public class BinaryTree {
     }
 
     public Node getNode(String cn, Node node) {
-        if (node != null && node.getContent().equals(cn)) {
-            return node;
-        }
         if (node != null) {
-            Node dummy = getNode(cn, node.getLeftTree());
-            if (dummy != null && dummy.getContent().equals(cn)) {
+            if (node.getContent().equals(cn)) {
+                return node;
+            }
+
+            Node dummy = getNode(cn, node.getLeftTree()); // look at the leftTree
+
+            if (dummy != null && dummy.getContent().equals(cn)) { // found smth?
                 return dummy;
             }
-            dummy = getNode(cn, node.getRightTree());
-            if (dummy != null && dummy.getContent().equals(cn)) {
+
+            dummy = getNode(cn, node.getRightTree()); // look at the rightTree
+
+            if (dummy != null && dummy.getContent().equals(cn)) { // found smth?
                 return dummy;
             }
         }
-        return null;
+        return null; // There's no Node with this content
 
     }
 
-    public boolean contains(String content) { // nach Inhalt suchen
-        return contains(content, this.root);
-    }
-
-    public boolean contains(String content, Node node) {
-
-        if (node == null) {
-            return false;
-        }
-
-        if (contains(content, node.getLeftTree())) {
-            return true;
-        } else {
-            if (node.getContent().equals(content)) {
-                return true;
-            }
-            return contains(content, node.getRightTree());
-        }
+    public boolean contains(String content) {
+        return getNode(content) != null; //getNode returns null if the nodes not there, so...
 
 
     }
+
 
     public Node addRecursive(String cn) {
-        if (getRoot() == null) {
+        if (getRoot() == null) { // if its the first Node just create it
             root = new Node(cn);
             return root;
         }
@@ -69,20 +55,20 @@ public class BinaryTree {
 
     public Node addRecursive(Node current, String cn) {
 
-
-        if (current.getContent().toLowerCase().compareTo(cn.toLowerCase()) > 0) {
-            if (current.getLeftTree() == null) {
+        if (current.getContent().toLowerCase().compareTo(cn.toLowerCase()) > 0) { // the new content is lower in the alphabet
+            if (current.getLeftTree() == null) { // no left node, so create it
                 current.setLeftTree(new Node(cn));
                 return current.getLeftTree();
             }
-            return addRecursive(current.getLeftTree(), cn);
+            return addRecursive(current.getLeftTree(), cn); // going further down by recalling method with left child
         }
-        if (current.getContent().toLowerCase().compareTo(cn.toLowerCase()) < 0) {
-            if (current.getRightTree() == null) {
+
+        if (current.getContent().toLowerCase().compareTo(cn.toLowerCase()) < 0) {// new content ist higher in the aplphabet
+            if (current.getRightTree() == null) { // no right node, so create it
                 current.setRightTree(new Node(cn));
                 return current.getRightTree();
             }
-            return addRecursive(current.getRightTree(), cn);
+            return addRecursive(current.getRightTree(), cn); // going further down by recalling method with right child
         }
 
         return current;
@@ -90,7 +76,7 @@ public class BinaryTree {
 
 
     public Node findParent(Node nodeToFind) {
-        if (nodeToFind == getRoot()) {
+        if (nodeToFind == getRoot()) { // the root has no parent...
             return null;
         }
         return findParent(getRoot(), nodeToFind);
@@ -98,26 +84,29 @@ public class BinaryTree {
 
     public Node findParent(Node node, Node nodeToFind) {
 
-        if (node != null) {
+        if (node != null) { // going back
             if (node.isLeaf()) {
                 return null;
             }
 
-            if (node.getLeftTree() == nodeToFind || node.getRightTree() == nodeToFind) {
+            if (node.getLeftTree() == nodeToFind || node.getRightTree() == nodeToFind) { // found the parent
                 return node;
             }
 
-            Node dummy = findParent(node.getLeftTree(), nodeToFind);
-            if (dummy != null) {
+            Node dummy = findParent(node.getLeftTree(), nodeToFind); // searching the left Tree
+
+            if (dummy != null) { // return if found the parent
                 return dummy;
             }
-            dummy = findParent(node.getRightTree(), nodeToFind);
-            if (dummy != null) {
+
+            dummy = findParent(node.getRightTree(), nodeToFind); // searching the right tree
+
+            if (dummy != null) { // return if found the parent
                 return dummy;
             }
 
         }
-        return null;
+        return null; // nothing found
 
     }
 
@@ -127,22 +116,21 @@ public class BinaryTree {
         Node toDelete = getNode(cn);
         Node parent = findParent(toDelete);
 
-        if(toDelete == null){
+        if (toDelete == null) { // then it is the root...i dont know why...
             Node successor = findNextNodeInOrder(getRoot());
 
-            getRoot().setContent("root: " + successor.getContent());
+            getRoot().setContent(successor.getContent()); // replace content of root with content of next node in line
 
-            if(findParent(successor).getRightTree() == successor) {
+            if (findParent(successor).getRightTree() == successor) { // delete the Node we took the content of
                 findParent(successor).setRightTree(null);
-            }else{
+            } else {
                 findParent(successor).setLeftTree(null);
             }
-            return getRoot();
+            return getRoot(); // returning the root we put the new content in
 
-        }else
+        }
 
-
-        if (toDelete.isLeaf()) {
+        if (toDelete.isLeaf()) { // if there's no child of the node to delete, just remove it from its parent
 
             if (parent.getLeftTree() == toDelete) {
                 parent.setLeftTree(null);
@@ -154,32 +142,45 @@ public class BinaryTree {
 
         }
 
-        //nur ein Child
-        if (toDelete.getLeftTree() != null && toDelete.getRightTree() == null) {
-            toDelete.setContent(toDelete.getLeftTree().getContent());
+        // only one child
 
-            toDelete.setLeftTree(null);
+        if (toDelete.getLeftTree() != null && toDelete.getRightTree() == null) { // child on the left side
+
+            toDelete.setContent(toDelete.getLeftTree().getContent()); // replace content of node toDelete with content of child
+
+            toDelete.setLeftTree(toDelete.getLeftTree().getLeftTree()); // setting the left Tree
+            toDelete.setRightTree(toDelete.getLeftTree().getRightTree()); // setting the right Tree
+
+
 
             return toDelete;
 
         }
 
-        if (toDelete.getLeftTree() == null && toDelete.getRightTree() != null) {
-            toDelete.setContent(toDelete.getRightTree().getContent());
+        if (toDelete.getLeftTree() == null && toDelete.getRightTree() != null) { // child on the right side
 
-            toDelete.setRightTree(null);
+            toDelete.setContent(toDelete.getRightTree().getContent()); // replace content of node toDelete with content of child
+
+            toDelete.setLeftTree(toDelete.getRightTree().getLeftTree()); // setting the left Tree
+            toDelete.setRightTree(toDelete.getRightTree().getRightTree()); // setting the right Tree
+
 
             return toDelete;
         }
+
+
         // two children
 
         Node successor = findNextNodeInOrder(toDelete);
 
-        toDelete.setContent(successor.getContent());
+        toDelete.setContent(successor.getContent()); // replacing content of toDelete with next node
 
-        if(findParent(successor).getRightTree() == successor) {
+
+
+        //delete succesor
+        if (findParent(successor).getRightTree() == successor) {
             findParent(successor).setRightTree(null);
-        }else{
+        } else {
             findParent(successor).setLeftTree(null);
         }
         return toDelete;
@@ -190,10 +191,12 @@ public class BinaryTree {
 
     public Node findNextNodeInOrder(Node node) {
         if (node != null) {
-            if (node.getRightTree() != null) {
+
+            if (node.getRightTree() != null) { // one time right
                 node = node.getRightTree();
             }
-            while (node.getLeftTree() != null) {
+
+            while (node.getLeftTree() != null) { // left how long it goes
                 node = node.getLeftTree();
             }
             return node;
@@ -211,7 +214,7 @@ public class BinaryTree {
             return;
         }
         printTree(node.getLeftTree());
-        if(getRoot() == node){
+        if (getRoot() == node) {
             System.out.print("root: ");
         }
         System.out.println(node.getContent());

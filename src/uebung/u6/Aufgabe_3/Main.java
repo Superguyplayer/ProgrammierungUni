@@ -5,24 +5,26 @@ public class Main {
 
        BinaryTree bTree = new BinaryTree();
 
-        bTree.addRecursive("M");
-        bTree.addRecursive("Guten");
-        bTree.addRecursive("Morgen");
-        bTree.addRecursive("Mein");
-        bTree.addRecursive("Name");
-        bTree.addRecursive("Ist");
-        bTree.addRecursive("Per");
-        bTree.addRecursive("Henrik");
-        bTree.addRecursive("Stolte");
+
+
+        bTree.addRecursive("a");
+        bTree.addRecursive("8");
+        bTree.addRecursive("c");
+        bTree.addRecursive("b");
+        bTree.addRecursive("6");
+        bTree.addRecursive("d");
+
+
 
         bTree.printTree();
 
-        bTree.delete("M");
+        bTree.delete("a");
         System.out.println();
 
         bTree.printTree();
 
-        System.out.println(Node.count);
+
+
 
 
 

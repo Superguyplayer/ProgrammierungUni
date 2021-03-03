@@ -13,6 +13,9 @@ public class Node {
 
     }
 
+    public Boolean isLeaf() {
+        return leftTree == null && rightTree == null; // no nodes below
+    }
 
     public Node setLeftTree(Node leftTree) {
         this.leftTree = leftTree;
@@ -41,8 +44,6 @@ public class Node {
     }
 
 
-    public Boolean isLeaf() {
-        return leftTree == null && rightTree == null;
-    }
+
 
 }
