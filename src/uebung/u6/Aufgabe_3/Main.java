@@ -7,17 +7,23 @@ public class Main {
 
 
 
-        bTree.addRecursive("a");
-        bTree.addRecursive("8");
-        bTree.addRecursive("c");
-        bTree.addRecursive("6");
-        bTree.addRecursive("d");
+        bTree.addRecursive("Mein");
+        bTree.addRecursive("Name");
+        bTree.addRecursive("ist");
+        bTree.addRecursive("Per");
+        bTree.addRecursive("Henrik");
+        bTree.addRecursive("ich");
+        bTree.addRecursive("bin");
+        bTree.addRecursive("19");
+        bTree.addRecursive("Jahre");
+        bTree.addRecursive("alt");
+
 
 
 
         bTree.printTree();
 
-        bTree.delete("c");
+        bTree.delete("bin");
         System.out.println();
 
         bTree.printTree();

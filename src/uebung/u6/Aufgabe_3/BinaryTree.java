@@ -113,10 +113,15 @@ public class BinaryTree {
 
     public Node delete(String cn) {
 
+        if(!contains(cn)) {
+            return null;
+        }
+
         Node toDelete = getNode(cn);
+
         Node parent = findParent(toDelete);
 
-        if (toDelete == getRoot()) { // then it is the root...i dont know why...
+        if (toDelete == getRoot()) {
             Node successor = findNextNodeInOrder(getRoot());
 
             getRoot().setContent(successor.getContent()); // replace content of root with content of next node in line
@@ -146,10 +151,15 @@ public class BinaryTree {
 
         if (toDelete.getLeftTree() != null && toDelete.getRightTree() == null) { // child on the left side
 
+            Node dummy = new Node(""); // save the status of toDelete
+            dummy.setRightTree(toDelete.getRightTree());
+            dummy.setLeftTree(toDelete.getLeftTree());
+
             toDelete.setContent(toDelete.getLeftTree().getContent()); // replace content of node toDelete with content of child
 
-            toDelete.setLeftTree(toDelete.getLeftTree().getLeftTree()); // setting the left Tree
-            toDelete.setRightTree(toDelete.getLeftTree().getRightTree()); // setting the right Tree
+
+            toDelete.setLeftTree(dummy.getLeftTree().getLeftTree()); // setting the left Tree
+            toDelete.setRightTree(dummy.getLeftTree().getRightTree()); // setting the right Tree
 
 
 
@@ -159,10 +169,14 @@ public class BinaryTree {
 
         if (toDelete.getLeftTree() == null && toDelete.getRightTree() != null) { // child on the right side
 
+            Node dummy = new Node(""); // save the status of toDelete
+            dummy.setRightTree(toDelete.getRightTree());
+            dummy.setLeftTree(toDelete.getLeftTree());
+
             toDelete.setContent(toDelete.getRightTree().getContent()); // replace content of node toDelete with content of child
 
-            toDelete.setLeftTree(toDelete.getRightTree().getLeftTree()); // setting the left Tree
-            toDelete.setRightTree(toDelete.getRightTree().getRightTree()); // setting the right Tree
+            toDelete.setLeftTree(dummy.getRightTree().getLeftTree()); // setting the left Tree
+            toDelete.setRightTree(dummy.getRightTree().getRightTree()); // setting the right Tree
 
 
             return toDelete;
