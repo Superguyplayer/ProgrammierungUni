@@ -20,12 +20,6 @@ public class Main {
 
 
 
-
-        bTree.printTree();
-
-        bTree.delete("bin");
-        System.out.println();
-
         bTree.printTree();
 
 

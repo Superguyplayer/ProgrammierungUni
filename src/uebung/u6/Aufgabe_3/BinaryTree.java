@@ -12,7 +12,6 @@ public class BinaryTree {
         return getNode(cn, getRoot());
 
     }
-
     public Node getNode(String cn, Node node) {
         if (node != null) {
             if (node.getContent().equals(cn)) {
@@ -51,8 +50,6 @@ public class BinaryTree {
         return addRecursive(getRoot(), cn);
 
     }
-
-
     public Node addRecursive(Node current, String cn) {
 
         if (current.getContent().toLowerCase().compareTo(cn.toLowerCase()) > 0) { // the new content is lower in the alphabet
@@ -81,7 +78,6 @@ public class BinaryTree {
         }
         return findParent(getRoot(), nodeToFind);
     }
-
     public Node findParent(Node node, Node nodeToFind) {
 
         if (node != null) { // going back
@@ -113,7 +109,7 @@ public class BinaryTree {
 
     public Node delete(String cn) {
 
-        if(!contains(cn)) {
+        if (!contains(cn)) {
             return null;
         }
 
@@ -162,7 +158,6 @@ public class BinaryTree {
             toDelete.setRightTree(dummy.getLeftTree().getRightTree()); // setting the right Tree
 
 
-
             return toDelete;
 
         }
@@ -188,7 +183,6 @@ public class BinaryTree {
         Node successor = findNextNodeInOrder(toDelete);
 
         toDelete.setContent(successor.getContent()); // replacing content of toDelete with next node
-
 
 
         //delete succesor
@@ -235,6 +229,7 @@ public class BinaryTree {
 
         printTree(node.getRightTree());
     }
+
 
 
 }
