@@ -1,4 +1,4 @@
-package vorlesung.a14;
+package vorlesung.v6.a14;
 
 public class Points
 {
