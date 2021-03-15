@@ -14,8 +14,7 @@ public class Quadrat extends Rechteck{
 
     public void setLaenge(int laenge) {
         this.laenge = laenge;
+
     }
-
-
 
 }

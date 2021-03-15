@@ -12,7 +12,7 @@ public class Rechteck {
         return hoehe;
     }
 
-    public void setHoehe(int hoehe) {
+    private void setHoehe(int hoehe) {
         this.hoehe = hoehe;
     }
 
@@ -20,7 +20,7 @@ public class Rechteck {
         return breite;
     }
 
-    public void setBreite(int breite) {
+    private void setBreite(int breite) {
         this.breite = breite;
     }
 

@@ -8,7 +8,8 @@ public class Aufgabe_5 {
     public static final String alphabet = "abcdefghijklmnopqrstuvwxyz";
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        //I/O
+
+        //  I/O
         System.out.print("Wort:");
         String word = s.nextLine();
         System.out.print("Schlüssel:");
@@ -18,7 +19,7 @@ public class Aufgabe_5 {
     private static String encryptDecrypt(String word, int offset) {
         StringBuilder builder = new StringBuilder();
 
-        for(char c: word.toLowerCase().toCharArray()) { // jeden Buschstaben durchswitchen
+        for(char c: word.toLowerCase().toCharArray()) { // jeden Buchstaben durch-switchen
             builder.append(shiftChar(c, offset));
         }
         return builder.toString();
@@ -35,13 +36,17 @@ public class Aufgabe_5 {
         if(alphabet.indexOf(abc) + offset > alphabet.length() - 1) {// nach oben
             return alphabet.charAt(alphabet.indexOf(abc) + offset - alphabet.length());
 
-        }else if(alphabet.indexOf(abc) + offset < 0) {// nach unten
+        }
+
+        if(alphabet.indexOf(abc) + offset < 0) {// nach unten
 
             return alphabet.charAt(alphabet.indexOf(abc) + offset + alphabet.length());
 
-        }else{ // normal
-            return alphabet.charAt(alphabet.indexOf(abc) + offset);
         }
+
+        // normal
+        return alphabet.charAt(alphabet.indexOf(abc) + offset);
+
     }
 
 }
