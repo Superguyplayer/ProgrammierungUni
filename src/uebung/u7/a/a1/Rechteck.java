@@ -25,4 +25,9 @@ public class Rechteck extends Figur{
     double getFlaeche() {
         return height * width;
     }
+
+    @Override
+    public int compareTo(Figur o) {
+        return Double.compare(this.getFlaeche(), o.getFlaeche());
+    }
 }

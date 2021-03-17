@@ -19,4 +19,9 @@ public class Kreis extends Figur{
     double getFlaeche() {
         return Math.PI * Math.pow(rad, 2);
     }
+
+    @Override
+    public int compareTo(Figur o) {
+        return Double.compare(this.getFlaeche(), o.getFlaeche());
+    }
 }
