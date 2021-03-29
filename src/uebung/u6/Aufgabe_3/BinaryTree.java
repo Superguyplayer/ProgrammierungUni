@@ -37,9 +37,7 @@ public class BinaryTree {
     public boolean contains(String content) {
         return getNode(content) != null; //getNode returns null if the nodes not there, so...
 
-
     }
-
 
     public Node addRecursive(String cn) {
         if (getRoot() == null) { // if its the first Node just create it

@@ -6,7 +6,6 @@ public abstract class Obst {
     public String color;
 
 
-
     abstract String getName();
     abstract String getFarbe();
 

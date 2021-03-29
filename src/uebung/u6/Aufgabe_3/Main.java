@@ -19,14 +19,14 @@ public class Main {
         bTree.addRecursive("alt");
 
 
-
         bTree.printTree();
 
+        bTree.delete("ist");
 
 
+        System.out.println();
 
-
-
+        bTree.printTree();
 
 
 
