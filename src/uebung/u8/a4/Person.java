@@ -5,7 +5,7 @@ public class Person {
     private int alter;
 
     public Person(String vorname, String nachname, int alter) {
-        if(nachname == null || nachname.equals("") ) {
+        if(nachname == null || nachname.isEmpty()) {
             throw new PersonException("Es muss ein Nachname angegeben werden!");
         }
         if(alter < 0 || alter > 150) {
@@ -14,7 +14,6 @@ public class Person {
         this.alter = alter;
         this.nachname = nachname;
         this.vorname = vorname;
-
 
     }
 

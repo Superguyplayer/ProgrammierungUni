@@ -1,4 +1,4 @@
 LineUnavailableException
 InterruptedException
-IOException
 UnsupportedAudioFileException
+IOException

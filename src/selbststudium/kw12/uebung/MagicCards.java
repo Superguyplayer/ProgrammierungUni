@@ -13,13 +13,13 @@ public class MagicCards
 	public static void generateCards()
 	{
 
-		ArrayList<Integer> card1 = new ArrayList<Integer>();
-		ArrayList<Integer> card2 = new ArrayList<Integer>();
-		ArrayList<Integer> card4 = new ArrayList<Integer>();
-		ArrayList<Integer> card8 = new ArrayList<Integer>();
-		ArrayList<Integer> card16 = new ArrayList<Integer>();
-		ArrayList<Integer> card32 = new ArrayList<Integer>();
-		ArrayList<Integer> card64 = new ArrayList<Integer>();
+		ArrayList<Integer> card1 = new ArrayList<>();
+		ArrayList<Integer> card2 = new ArrayList<>();
+		ArrayList<Integer> card4 = new ArrayList<>();
+		ArrayList<Integer> card8 = new ArrayList<>();
+		ArrayList<Integer> card16 = new ArrayList<>();
+		ArrayList<Integer> card32 = new ArrayList<>();
+		ArrayList<Integer> card64 = new ArrayList<>();
 
 		cards.add(card1);
 		cards.add(card2);

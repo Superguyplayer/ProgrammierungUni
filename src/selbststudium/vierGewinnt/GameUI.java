@@ -1,4 +1,4 @@
-package uebung.vierGewinnt;
+package selbststudium.vierGewinnt;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

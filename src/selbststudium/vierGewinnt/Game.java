@@ -1,4 +1,4 @@
-package uebung.vierGewinnt;
+package selbststudium.vierGewinnt;
 
 public class Game {
 
