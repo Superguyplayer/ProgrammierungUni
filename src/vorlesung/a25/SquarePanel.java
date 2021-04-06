@@ -11,22 +11,23 @@ import java.util.TimerTask;
 
 public class SquarePanel extends JFrame {
 
+    int movespeed = 5;
     JPanel panelRO, panelRU, panelLO, panelLU;
     Timer t;
     TimerTask tt = new TimerTask() {
         @Override
         public void run() {
-
-                panelRO.setLocation(panelRO.getX() + 5, panelRO.getY() - 5);
-                panelRU.setLocation(panelRU.getX() + 5, panelRU.getY() + 5);
-                panelLO.setLocation(panelLO.getX() - 5, panelLO.getY() - 5);
-                panelLU.setLocation(panelLU.getX() - 5, panelLU.getY() + 5);
+                //animation
+                panelRO.setLocation(panelRO.getX() + movespeed, panelRO.getY() - movespeed);
+                panelRU.setLocation(panelRU.getX() + movespeed, panelRU.getY() + movespeed);
+                panelLO.setLocation(panelLO.getX() - movespeed, panelLO.getY() - movespeed);
+                panelLU.setLocation(panelLU.getX() - movespeed, panelLU.getY() + movespeed);
 
 
         }
     };
 
-
+        //constructor
     public SquarePanel() {
         this.setLayout(null);
         this.setSize(550, 600);
@@ -99,12 +100,14 @@ public class SquarePanel extends JFrame {
 
     private void initializeComponents() {
         t = new Timer();
+
+        //creating Panels
         panelRO = new JPanel();
         panelRU = new JPanel();
         panelLO = new JPanel();
         panelLU = new JPanel();
 
-
+        //configuring Panels
         panelRO.setLocation(225, 250);
         panelRO.setSize(50,50);
         panelRO.setBackground(Color.RED);
