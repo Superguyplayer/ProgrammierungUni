@@ -22,7 +22,7 @@ public class Aufgabe_1 {
             BigInteger b1 = new BigInteger(input, numberFormat);
 
 
-        System.out.println("Decimal: " + b1.toString(1));
+        System.out.println("Decimal: " + b1.toString(10));
 
         System.out.println("Binary: " + b1.toString(2));
 

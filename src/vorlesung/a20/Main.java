@@ -1,4 +1,4 @@
-package selbststudium.kw12.vorlesung.Aufgabe_20;
+package vorlesung.a20;
 
 public class Main {
     public static void main(String[] args) {

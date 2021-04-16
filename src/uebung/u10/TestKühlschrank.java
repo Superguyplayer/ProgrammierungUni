@@ -6,7 +6,7 @@ public class TestKühlschrank {
         Kuehlschrank k = new Kuehlschrank();
 
         try {
-            k.addContent("möhre", 5);
+            k.addContent("möhre", 4);
             k.addContent("joghurt", 3);
             k.addContent("möhre", 5);
 

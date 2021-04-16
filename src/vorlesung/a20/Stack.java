@@ -1,4 +1,4 @@
-package selbststudium.kw12.vorlesung.Aufgabe_20;
+package vorlesung.a20;
 
 public class Stack {
     Node top;
@@ -15,7 +15,7 @@ public class Stack {
     }
 
     void push(Node node) {
-        if (this.top == null) {
+        if (this.top == null) { // Stack ist noch leer
             this.top = node;
         } else {
             node.next = this.top;

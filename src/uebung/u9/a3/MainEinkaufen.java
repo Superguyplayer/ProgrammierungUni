@@ -8,7 +8,7 @@ public class MainEinkaufen {
         Artikel a2 = new Artikel(2, 2.75, 2);
         Artikel a3 = new Artikel(3, 3, 5);
 
-        Warenkorb w1 = new Warenkorb();
+       Warenkorb w1 = new Warenkorb();
 
         w1.add(a1);
         w1.add(a2);

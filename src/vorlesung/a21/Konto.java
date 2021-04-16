@@ -1,4 +1,4 @@
-package selbststudium.kw12.vorlesung.Aufgabe_21;
+package vorlesung.a21;
 
 public class Konto
 {

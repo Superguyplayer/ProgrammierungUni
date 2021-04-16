@@ -2,101 +2,82 @@ package vorlesung.a25;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class SquarePanel extends JFrame {
 
-    int movespeed = 5;
-    JPanel panelRO, panelRU, panelLO, panelLU;
-    Timer t;
-    TimerTask tt = new TimerTask() {
+    private int movespeed = 5;
+    private JPanel panelRO, panelRU, panelLO, panelLU;
+    private boolean running = true;
+    private Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+    private Timer t;
+
+    private TimerTask tt = new TimerTask() {
         @Override
         public void run() {
-                //animation
+
+            //stopping the animation if the squares reached the edge
+            if(panelLO.getX() <= 0) {
+                running = false;
+            }
+
+            //animation
+            if(running) {
                 panelRO.setLocation(panelRO.getX() + movespeed, panelRO.getY() - movespeed);
                 panelRU.setLocation(panelRU.getX() + movespeed, panelRU.getY() + movespeed);
                 panelLO.setLocation(panelLO.getX() - movespeed, panelLO.getY() - movespeed);
                 panelLU.setLocation(panelLU.getX() - movespeed, panelLU.getY() + movespeed);
 
+            }
 
         }
     };
 
         //constructor
     public SquarePanel() {
+        this.setTitle("Squares");
         this.setLayout(null);
-        this.setSize(550, 600);
+        this.setSize(515, 600);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        //setting the window to mid of the screen
+        this.setLocation(screen.width / 2 - this.getWidth() / 2, screen.height / 2 - this.getHeight() / 2);
+
 
         initializeComponents();
         initializeListeners();
 
-        this.setVisible(true);
+        //starting the animation
+        t.scheduleAtFixedRate(tt, 250,250);
 
+        this.setVisible(true);
 
     }
 
     private void initializeListeners() {
 
         //Keys
-        this.addKeyListener(new KeyListener() {
-            @Override
-            public void keyTyped(KeyEvent e) {
-
-            }
+        this.addKeyListener(new KeyAdapter() {
 
             @Override
             public void keyPressed(KeyEvent e) {
                 if(e.getKeyCode() == KeyEvent.VK_ESCAPE) {
-                    t.cancel();
+                   running = !running;
                 }
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-
             }
         });
 
         //Mouse
-        this.addMouseListener(new MouseListener() {
+        this.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                    t.cancel();
-
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-
+                    running = !running;
             }
         });
 
-
     }
-
-
-
 
     private void initializeComponents() {
         t = new Timer();
@@ -124,16 +105,14 @@ public class SquarePanel extends JFrame {
         panelLU.setSize(50,50);
         panelLU.setBackground(Color.RED);
 
-
+        //adding Panels
         this.add(panelRO);
         this.add(panelRU);
         this.add(panelLO);
         this.add(panelLU);
 
-        t.scheduleAtFixedRate(tt, 250,250);
 
     }
-
 
 
 }

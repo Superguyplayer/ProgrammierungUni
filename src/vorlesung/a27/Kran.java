@@ -2,7 +2,7 @@ package vorlesung.a27;
 
 import javax.swing.*;
 import java.awt.*;
-import java.lang.invoke.VarHandle;
+
 
 public class Kran extends JPanel {
 

@@ -4,7 +4,7 @@ import java.util.Vector;
 
 public class Warenkorb {
 
-    private Vector<Artikel> artikelVector = new Vector<Artikel>();
+    private Vector<Artikel> artikelVector = new Vector<>();
 
 
     public void add(Artikel artikel) {
