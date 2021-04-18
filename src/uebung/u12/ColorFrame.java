@@ -52,21 +52,15 @@ public class ColorFrame extends JFrame {
             }
         });
 
-        btnColor.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                for(ColorPanel p : panels) {
-                    p.changeColor();
-                }
+        btnColor.addActionListener(e -> {
+            for(ColorPanel p : panels) {
+                p.changeColor();
             }
         });
 
-        btnReset.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                for(ColorPanel p : panels) {
-                    p.white();
-                }
+        btnReset.addActionListener(e -> {
+            for(ColorPanel p : panels) {
+                p.white();
             }
         });
 

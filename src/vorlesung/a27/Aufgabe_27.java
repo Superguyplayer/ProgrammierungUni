@@ -1,8 +1,7 @@
 package vorlesung.a27;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 
 
 public class Aufgabe_27 extends JFrame {
@@ -30,53 +29,22 @@ public class Aufgabe_27 extends JFrame {
     private void initializeListeners() {
 
         //extend hook
-        btnExtendHook.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                kran.extendHook(10);
-            }
-        });
+        btnExtendHook.addActionListener(e -> kran.extendHook(10));
 
         //decreaseHook
-        btnDriveInHook.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                kran.decreaseHook(10);
-            }
-        });
+        btnDriveInHook.addActionListener(e -> kran.decreaseHook(10));
 
         //move crane to the left
-        btnLeft.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                kran.moveCrane(-10);
-            }
-        });
+        btnLeft.addActionListener(e -> kran.moveCrane(-10));
 
-        //move crane to the left
-        btnRight.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                kran.moveCrane(10);
-            }
-        });
+        //move crane to the right
+        btnRight.addActionListener(e -> kran.moveCrane(10));
 
         //move arm left
-        btnDriveIn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                kran.extendArm(-10);
-            }
-        });
+        btnDriveIn.addActionListener(e -> kran.extendArm(-10));
 
-            //move arm right
-        btnExtend.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                kran.extendArm(10
-                );
-            }
-        });
+        //move arm right
+        btnExtend.addActionListener(e -> kran.extendArm(10));
 
     }
 

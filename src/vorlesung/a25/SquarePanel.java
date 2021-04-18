@@ -3,6 +3,7 @@ package vorlesung.a25;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Arrays;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -11,7 +12,7 @@ public class SquarePanel extends JFrame {
     private int movespeed = 5;
     private JPanel panelRO, panelRU, panelLO, panelLU;
     private boolean running = true;
-    private Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+    private final Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
     private Timer t;
 
     private TimerTask tt = new TimerTask() {
@@ -41,6 +42,7 @@ public class SquarePanel extends JFrame {
         this.setLayout(null);
         this.setSize(515, 600);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setResizable(false);
 
         //setting the window to mid of the screen
         this.setLocation(screen.width / 2 - this.getWidth() / 2, screen.height / 2 - this.getHeight() / 2);
@@ -53,6 +55,7 @@ public class SquarePanel extends JFrame {
         t.scheduleAtFixedRate(tt, 250,250);
 
         this.setVisible(true);
+
 
     }
 
