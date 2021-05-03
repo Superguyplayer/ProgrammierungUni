@@ -1,8 +1,6 @@
 package vorlesung.a30;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
 
 public class Aufgabe_30 extends JFrame {
@@ -16,6 +14,7 @@ public class Aufgabe_30 extends JFrame {
         this.setTitle("Aufgabe_30");
         this.setSize(600, 300);
         this.setResizable(false);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         initializeComponents();
         initializeListeners();

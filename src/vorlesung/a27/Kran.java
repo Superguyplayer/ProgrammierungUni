@@ -57,11 +57,11 @@ public class Kran extends JPanel {
 
     private void updateCrane() {
 
-        pnlBottom.setBounds(midX - 78, midY, 175, 25);
-        pnlHook.setBounds(midX - topLenght, midY - 150, 25, hookLenght);
-        pnlMid.setBounds(midX, midY - top, 25, top);
+        pnlBottom.setBounds(midX - 78, midY, 175, 25); //position the bottom
+        pnlHook.setBounds(midX - topLenght, midY - 150, 25, hookLenght); // position and changhe the sie of the hook
+        pnlMid.setBounds(midX, midY - top, 25, top); // position the mid
 
-        if(topLenght < 0) {
+        if(topLenght < 0) { // top moves different if on the right or left side
             pnlTop.setBounds(midX, midY - top, Math.abs(topLenght), 25);
         }else{
             pnlTop.setBounds(midX - topLenght, midY - top, topLenght, 25);

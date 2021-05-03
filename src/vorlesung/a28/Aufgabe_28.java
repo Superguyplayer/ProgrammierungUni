@@ -12,6 +12,7 @@ public class Aufgabe_28 extends JFrame {
         this.setLayout(new GridLayout(4, 5, 15, 15));
         this.setSize(700,500);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.getContentPane().setBackground(Color.BLACK);
 
         initializeComponents() ;
 

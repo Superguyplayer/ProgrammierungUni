@@ -12,6 +12,7 @@ public class UIClock extends JFrame {
     private JLabel lblTime;
     private Timer t;
     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
+
     private TimerTask tt = new TimerTask() {
         @Override
         public void run() {

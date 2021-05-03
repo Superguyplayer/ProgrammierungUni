@@ -1,12 +1,6 @@
 package uebung.u12;
-
-import uebung.u11.a2.ColorPanel;
-
 import javax.swing.*;
-import javax.swing.plaf.basic.BasicArrowButton;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -34,23 +28,6 @@ public class ColorFrame extends JFrame {
     }
 
     private void initializeListeners() {
-
-        this.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-              try {
-                  ColorPanel p = (ColorPanel) gridPanel.getComponentAt(e.getPoint());
-                  if (p != null) {
-
-                      p.changeColor();
-
-                  }
-              }catch(ClassCastException exception) {
-                  System.out.println("nicht dahin klicken....");
-              }
-
-            }
-        });
 
         btnColor.addActionListener(e -> {
             for(ColorPanel p : panels) {

@@ -1,19 +1,32 @@
 package vorlesung.a29;
 
 import javax.swing.*;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
+import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 public class Artikelverwaltung extends JFrame {
 
-    private JLabel lblArticle, lblPrice, lblDescription;
+    private JLabel lblArticle, lblPrice, lblDescription, lblWarning;
     private JTextField txtArticle, txtPrice;
     private JTextArea txtDescription;
     private JScrollPane scrollPane;
 
     private JButton btnOK, btnPrint;
+
+    private InputVerifier verifier = new InputVerifier() {
+        @Override
+        public boolean verify(JComponent input) {
+            JTextField field = (JTextField) input;
+            String in = field.getText();
+            try{
+                Double.parseDouble(in);
+            } catch(Exception e) {
+                return false;
+            }
+            return true;
+        }
+    };
 
 
     public Artikelverwaltung() {
@@ -35,7 +48,22 @@ public class Artikelverwaltung extends JFrame {
     private void initializeListeners() {
 
 
-        btnOK.addActionListener(e -> {System.out.println(txtArticle.getText() + ", Price: " + txtPrice.getText());});
+        btnOK.addActionListener(e -> {
+            if(txtArticle.getText().equals("")) {
+                lblWarning.setText("Es muss eine Artikelbezeichnung geben");
+                lblWarning.setForeground(Color.red);
+                lblWarning.setVisible(true);
+            }else if(verifier.verify(txtPrice)) {
+                lblWarning.setText("Bitte einen sinnvollen Preis eingeben");
+                lblWarning.setForeground(Color.red);
+                lblWarning.setVisible(true);
+            } else{
+
+                System.out.println(txtArticle.getText() + ", Price: " + txtPrice.getText());
+            }
+
+
+        });
 
         //max 30 chars
         txtArticle.addKeyListener(new KeyAdapter() {
@@ -55,7 +83,7 @@ public class Artikelverwaltung extends JFrame {
                     e.consume();
                 }
 
-                if(!Character.isDigit(e.getKeyChar()) && !(e.getKeyChar() == '.')) { // nur Zahlen eingeben
+                if(!Character.isDigit(e.getKeyChar()) && !(e.getKeyChar() == ',')) { // nur Zahlen eingeben
                     e.consume();
                 }
             }
@@ -76,6 +104,11 @@ public class Artikelverwaltung extends JFrame {
         lblPrice = new JLabel("Preis:");
         lblPrice.setBounds(25, 48, 50, 15);
         this.add(lblPrice);
+
+        lblWarning = new JLabel("");
+        lblWarning.setBounds(150, 2, 250, 20);
+        lblWarning.setVisible(false);
+        this.add(lblWarning);
 
         txtPrice = new JTextField();
         txtPrice.setBounds(25, 65, 400, 20);

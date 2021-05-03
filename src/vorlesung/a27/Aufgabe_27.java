@@ -1,13 +1,13 @@
 package vorlesung.a27;
 
 import javax.swing.*;
-
+import java.awt.*;
 
 
 public class Aufgabe_27 extends JFrame {
 
-    JButton btnExtendHook, btnDriveInHook, btnExtend, btnDriveIn, btnLeft, btnRight;
-    Kran kran;
+    private JButton btnExtendHook, btnDriveInHook, btnExtend, btnDriveIn, btnLeft, btnRight;
+    private Kran kran;
 
 
     public Aufgabe_27() {

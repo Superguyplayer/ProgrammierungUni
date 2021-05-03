@@ -2,6 +2,7 @@ package uebung.u11.a2;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Timer;
@@ -37,23 +38,7 @@ public class Aufgabe_2 extends JFrame {
 
     private void initializeListeners() {
 
-        this.addMouseListener(new MouseListener() {
-
-
-            @Override
-            public void mouseClicked(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
+        this.addMouseListener(new MouseAdapter() {
 
             @Override
             public void mouseEntered(MouseEvent e) {
@@ -68,7 +53,6 @@ public class Aufgabe_2 extends JFrame {
                 pause = true;
                 pnlSquare.setBackground(Color.RED);
                 pnlSquare.setSize(50, 50);
-
 
             }
         });
