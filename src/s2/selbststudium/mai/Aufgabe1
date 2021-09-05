@@ -1,0 +1,7 @@
+a)
+eine rekursive Methode zeichnet sich dadurch aus, dass Sie sich selbst wieder aufruft.
+Dabei ist es wichtig, eine abbruchbedingung zu implementieren, da sonst eine ewiger loop gestartet wird.
+
+b)
+die jvm ist eine virtuelle Maschine auf der Java-Bytecode ausgeführt werden kann. Diese "übersetzt" diesen dann für das jeweilige Betriebssystem.
+Dadurch wird eine sehr hohe Portabilität erreicht.

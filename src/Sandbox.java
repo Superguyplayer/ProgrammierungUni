@@ -1,13 +1,10 @@
-import javax.swing.*;
+
 
 public class Sandbox {
     public static void main(String[] args)  {
-        new Sandbox();
+        System.out.println(17+4*2);
     }
 
-    public Sandbox() {
-
-    }
 
 
 }
