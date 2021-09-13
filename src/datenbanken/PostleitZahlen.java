@@ -5,25 +5,27 @@ import java.util.Scanner;
 
 public class PostleitZahlen {
 
-    static HashMap<Integer, String> data = new HashMap<>();
+    static HashMap<String, String> data = new HashMap<>();
 
     public static void main(String[] args){
 
         Scanner scanner = new Scanner(System.in);
 
-        addTown(58675, "Hemer");
-        addTown(58636, "Iserlohn");
-        addTown(58706, "Menden");
+        addTown("58675", "Hemer");
+        addTown("58636", "Iserlohn");
+        addTown("58706", "Menden");
 
 
         do {
 
             System.out.println("Postleitzahl: ");
-            int plz = scanner.nextInt();
+
+            String plz = scanner.nextLine();
 
             if(data.containsKey(plz)) {
 
                 System.out.println("Zur Postleitzahl " + plz + " gehört die Stadt " + data.get(plz));
+
             }else{
                 System.out.println("Nicht vorhanden");
             }
@@ -42,7 +44,7 @@ public class PostleitZahlen {
 
         Scanner s = new Scanner(System.in);
         System.out.println("Postleitzahl: ");
-        int plz = s.nextInt();
+        String plz = s.nextLine();
         System.out.println("Stadtname: ");
         String name = s.nextLine();
 
@@ -50,7 +52,7 @@ public class PostleitZahlen {
 
     }
 
-    private static void addTown(int plz, String name){
+    private static void addTown(String plz, String name){
         data.put(plz, name);
 
     }
