@@ -1,6 +1,6 @@
 package datenbanken.aufgabeAktionaere;
 
-import java.util.ArrayList;
+
 import java.util.HashMap;
 
 public class Aktionaer {

@@ -29,27 +29,30 @@ public class Main {
 
 
 
-        System.out.println("Aktionäre von " + unternehmenList.get(0).getName());
-        for(Aktionaer a:unternehmenList.get(0).getAktionaere().keySet()) {
+
+
+        System.out.println("Unternehmen von : "  + aktionaerList.get(2).getName());
+
+
+        for(Unternehmen u: aktionaerList.get(2).getUnternehmen().keySet()) {
+            System.out.println(u.getName());
+        }
+
+        System.out.println();
+        System.out.println("Aktionäre von Pfizer:");
+        for(Aktionaer a: unternehmenList.get(2).getAktionaere().keySet()) {
             System.out.println(a.getName());
         }
 
-
-        System.out.println("Unternehmen von : "  + aktionaerList.get(2).getName());
-        System.out.println();
-
-        for(Unternehmen u: aktionaerList.get(2).getUnternehmen().keySet()) {
-            System.out.println(u.getName());
-        }
-
         deleteUnternehmen(unternehmenList.get(2));
-
-        System.out.println("Unternehmen von : "  + aktionaerList.get(2).getName());
         System.out.println();
+        System.out.println("Unternehmen von : "  + aktionaerList.get(2).getName());
+
 
         for(Unternehmen u: aktionaerList.get(2).getUnternehmen().keySet()) {
             System.out.println(u.getName());
         }
+
 
 
 
